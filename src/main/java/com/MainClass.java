@@ -34,19 +34,19 @@ public class MainClass {
     }
 
     public static void main(String[] args) {
-        File workDir = new File("src\\main\\resources\\work");
+        File workDir = new File("src\\main\\resources\\source");
         if(workDir.exists() && workDir.isDirectory()) {
             try {
-                Stream<Path> paths = Files.walk(Paths.get("src\\main\\resources\\work"), 1);
+                Stream<Path> paths = Files.walk(Paths.get("src\\main\\resources\\source"), 1);
                 paths.forEach(path -> {
-                    if(!path.toFile().getName().equalsIgnoreCase("work"))
+                    if(!path.toFile().getName().equalsIgnoreCase("source"))
                         filesMap.put(path.toFile().getName(), 0);
                 });
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            File collectDir = new File("src\\main\\resources\\collect");
+            File collectDir = new File("src\\main\\resources\\target");
             if (collectDir.exists() && collectDir.isDirectory()) {
                 MainClass.moveUsingMultiThread();
             }

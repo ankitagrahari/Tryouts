@@ -25,14 +25,14 @@ public class ProcessFiles implements Runnable{
                                 null!=MainClass.filesMap.get(entry.getKey()) &&
                                 MainClass.filesMap.get(entry.getKey()) == 0) {
 
-                            Files.move(Paths.get("src\\main\\resources\\work" +
+                            Files.move(Paths.get("src\\main\\resources\\source" +
                                             File.separator + entry.getKey()),
-                                    Paths.get("src\\main\\resources\\collect" +
+                                    Paths.get("src\\main\\resources\\target" +
                                             File.separator + entry.getKey()));
                             MainClass.filesMap.remove(entry.getKey());
                         }
                     } catch (NoSuchFileException nsfe) {
-                        if (!new File("src\\main\\resources\\collect" +
+                        if (!new File("src\\main\\resources\\target" +
                                 File.separator + entry.getKey()).exists()) {
                             nsfe.printStackTrace();
                         }
