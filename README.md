@@ -1,3 +1,4 @@
-###MultiThread-ExecutorService
-This project is to copy files from one directory to another directory using multiple threads.
-We are using ExecutorService from Java 8.
+###Tryouts
+
+Different type of programs to try out different scenarios.
+Use Java 8
