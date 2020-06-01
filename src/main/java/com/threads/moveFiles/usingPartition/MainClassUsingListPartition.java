@@ -1,7 +1,4 @@
-package com;
-
-import com.threads.ProcessFiles;
-import com.threads.ProcessFilesUsingListPartition;
+package com.threads.moveFiles.usingPartition;
 
 import java.io.File;
 import java.io.IOException;

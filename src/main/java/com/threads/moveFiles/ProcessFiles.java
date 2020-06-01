@@ -1,6 +1,4 @@
-package com.threads;
-
-import com.MainClass;
+package com.threads.moveFiles;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,6 +1,4 @@
-package com;
-
-import com.threads.ProcessFiles;
+package com.threads.moveFiles;
 
 import java.io.File;
 import java.io.IOException;
