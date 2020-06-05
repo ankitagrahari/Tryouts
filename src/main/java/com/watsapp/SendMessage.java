@@ -16,6 +16,11 @@ public class SendMessage {
                 "Hello there!")
                 .create();
 
+//        ProxiedTwilioClientCreator clientCreator = new ProxiedTwilioClientCreator(
+//                ACCOUNT_SID, AUTH_TOKEN, PROXY_HOST, PROXY_PORT);
+//        TwilioRestClient twilioRestClient = clientCreator.getClient();
+//        Twilio.setRestClient(twilioRestClient);
+
         System.out.println(message.getSid());
     }
 
