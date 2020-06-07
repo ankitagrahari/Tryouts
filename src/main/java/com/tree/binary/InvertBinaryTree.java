@@ -21,12 +21,10 @@ public class InvertBinaryTree {
 
     public static void main(String[] args) {
         InvertBinaryTree obj = new InvertBinaryTree();
-        BTreeTraversal trvObj = new BTreeTraversal();
-        BTree bTree = new BTree();
 
-        TreeNode root = bTree.prepareBTree();
+        TreeNode root = BTree.prepareBTree();
         System.out.println("Original BTree");
-        trvObj.traverseBTreePreOrder(root);
+        BTreeTraversal.traverseBTreePreOrder(root);
 
         System.out.println();
         System.out.println("After inversion");
@@ -34,14 +32,14 @@ public class InvertBinaryTree {
 
         System.out.println();
         System.out.println("PreOrder Traversal");
-        trvObj.traverseBTreePreOrder(invertBTreeRoot);
+        BTreeTraversal.traverseBTreePreOrder(invertBTreeRoot);
 
         System.out.println();
         System.out.println("InOrder Traversal");
-        trvObj.traverseBTreeInOrder(invertBTreeRoot);
+        BTreeTraversal.traverseBTreeInOrder(invertBTreeRoot);
 
         System.out.println();
         System.out.println("PostOrder Traversal");
-        trvObj.traverseBTreePostOrder(invertBTreeRoot);
+        BTreeTraversal.traverseBTreePostOrder(invertBTreeRoot);
     }
 }

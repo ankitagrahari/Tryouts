@@ -2,48 +2,59 @@ package com.tree.binary;
 
 public class BTreeTraversal {
 
-    public void traverseBTreePreOrder(TreeNode root){
+    public static void traverseBTreePreOrder(TreeNode root){
         if(null==root){
             return;
         }
-        System.out.print(root.getValue()+"-->");
+        if(null!=root.getValue()) {
+            System.out.print(root.getValue() + "-->");
+        } else {
+            System.out.print(root.getIntValue() + "-->");
+        }
         traverseBTreePreOrder(root.getLeft());
         traverseBTreePreOrder(root.getRight());
     }
 
-    public void traverseBTreeInOrder(TreeNode root){
+    public static void traverseBTreeInOrder(TreeNode root){
         if(null==root){
             return;
         }
         traverseBTreeInOrder(root.getLeft());
-        System.out.print(root.getValue()+"-->");
+        if(null!=root.getValue()) {
+            System.out.print(root.getValue() + "-->");
+        } else {
+            System.out.print(root.getIntValue() + "-->");
+        }
         traverseBTreeInOrder(root.getRight());
     }
 
-    public void traverseBTreePostOrder(TreeNode root){
+    public static void traverseBTreePostOrder(TreeNode root){
         if(null==root){
             return;
         }
         traverseBTreePostOrder(root.getLeft());
         traverseBTreePostOrder(root.getRight());
-        System.out.print(root.getValue()+"-->");
+        if(null!=root.getValue()) {
+            System.out.print(root.getValue() + "-->");
+        } else {
+            System.out.print(root.getIntValue() + "-->");
+        }
     }
 
     public static void main(String[] args) {
-        BTreeTraversal obj = new BTreeTraversal();
-        BTree btree = new BTree();
-        TreeNode root = btree.prepareBTree();
+
+        TreeNode root = BTree.prepareBTree();
 
         System.out.println("Depth First Traversal - Inorder");
-        obj.traverseBTreeInOrder(root);
+        BTreeTraversal.traverseBTreeInOrder(root);
 
         System.out.println();
         System.out.println("Depth First Traversal - Preorder");
-        obj.traverseBTreePreOrder(root);
+        BTreeTraversal.traverseBTreePreOrder(root);
 
         System.out.println();
         System.out.println("Depth First Traversal - Postorder");
-        obj.traverseBTreePostOrder(root);
+        BTreeTraversal.traverseBTreePostOrder(root);
 
     }
 }
