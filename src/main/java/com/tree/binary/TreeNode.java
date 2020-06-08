@@ -2,8 +2,8 @@ package com.tree.binary;
 
 public class TreeNode {
 
-    private com.tree.binary.TreeNode left;
-    private com.tree.binary.TreeNode right;
+    private TreeNode left;
+    private TreeNode right;
     private String value;
     private int intValue;
     public TreeNode(String value){ this.value = value; }
