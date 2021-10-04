@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.sol;
 
 import java.util.*;
 import java.util.stream.Collectors;

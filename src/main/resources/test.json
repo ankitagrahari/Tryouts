@@ -1,0 +1,48 @@
+[
+  {
+    "rule_name": "updated_name10",
+    "sa_rule_id": "18430001",
+    "entity_producer_instance_type": "SA",
+    "rule_type_name": "CMDOUTPUT",
+    "description": "",
+    "modified_date": "2020-11-09 05:53:12.629",
+    "created_by": "opsware",
+    "entity_tenant_id": "",
+    "rule_id": "000000000000000000003622630aa531",
+    "deleted_date": "",
+    "itemtype": "entity",
+    "datatablename": "RULE",
+    "modified_by": "opsware",
+    "created_date": "2020-09-10 04:01:29",
+    "operation": "UPDATE",
+    "timestamp_utc_s": "1604901192",
+    "entity_unique_id": "000000000000000000003622630aa531"
+  },
+  {
+    "rule_name": "CPUS",
+    "sa_rule_id": "20990001",
+    "entity_producer_instance_type": "SA",
+    "rule_type_name": "CPUS",
+    "description": "",
+    "entity_producer_instance_id": "862220",
+    "modified_date": "2020-11-09 07,41,31.092",
+    "created_by": "bala",
+    "entity_tenant_id": "",
+    "rule_id": "000000000000000000004e6b20eed431",
+    "deleted_date": "",
+    "itemtype": "entity",
+    "datatablename": "RULE",
+    "modified_by": "bala",
+    "created_date": "2020-09-14 11,57,21",
+    "operation": "UPDATE",
+    "timestamp_utc_s": "1604907691",
+    "entity_unique_id": "000000000000000000004e6b20eed431"
+  },
+  {
+    "B2": "2",
+    "A2": "1",
+    "E2": "5",
+    "D2": "4",
+    "C2": "3"
+  }
+]

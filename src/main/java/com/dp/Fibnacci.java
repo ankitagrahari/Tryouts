@@ -1,6 +1,8 @@
 package com.dp;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -51,23 +53,32 @@ public class Fibnacci {
         return b;
     }
 
+    public void test(){
+        List<String> sb = new ArrayList<>();
+        sb.add("abc"); sb.add("bcd");
+        System.out.println(String.join(",", sb.toArray(new String[0])));
+        System.out.println(sb.toString());
+    }
+
     public static void main(String[] args) {
         Fibnacci obj = new Fibnacci();
-        int findFib = 50;
-        long start = System.currentTimeMillis();
-        System.out.println("Fibnacci of "+findFib+ " by recursion approach is "+ obj.naiveFibnacci(findFib));
-        long end = System.currentTimeMillis();
-        System.out.println("Time taken in seconds:"+(end-start)/1000);
+//        int findFib = 50;
+//        long start = System.currentTimeMillis();
+//        System.out.println("Fibnacci of "+findFib+ " by recursion approach is "+ obj.naiveFibnacci(findFib));
+//        long end = System.currentTimeMillis();
+//        System.out.println("Time taken in seconds:"+(end-start)/1000);
+//
+//        start = System.currentTimeMillis();
+//        System.out.println("Fibnacci of "+findFib+ " by Dynamic Programming(Memoization) is "+ obj.dpFibnacci(findFib, null));
+//        end = System.currentTimeMillis();
+//        System.out.println("Time taken in seconds:"+(end-start)/1000);
+//
+//        start = System.currentTimeMillis();
+//        System.out.println("Fibnacci of "+findFib+ " by Dynamic Programming(Bottom-up approach) is "+ obj.dpFibnacciBottomUp(findFib));
+//        end = System.currentTimeMillis();
+//        System.out.println("Time taken in seconds:"+(end-start)/1000);
 
-        start = System.currentTimeMillis();
-        System.out.println("Fibnacci of "+findFib+ " by Dynamic Programming(Memoization) is "+ obj.dpFibnacci(findFib, null));
-        end = System.currentTimeMillis();
-        System.out.println("Time taken in seconds:"+(end-start)/1000);
-
-        start = System.currentTimeMillis();
-        System.out.println("Fibnacci of "+findFib+ " by Dynamic Programming(Bottom-up approach) is "+ obj.dpFibnacciBottomUp(findFib));
-        end = System.currentTimeMillis();
-        System.out.println("Time taken in seconds:"+(end-start)/1000);
+        obj.test();
 
     }
 }

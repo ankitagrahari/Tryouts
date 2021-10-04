@@ -1,6 +1,4 @@
-package com.leetcode;
-
-import java.util.Arrays;
+package com.leetcode.sol;
 
 /**
  * Share
