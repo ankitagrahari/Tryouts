@@ -2,6 +2,7 @@ package com.leetcode.prep;
 
 import com.leetcode.LC;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,15 +26,36 @@ import java.util.List;
 public class BuySellStock309 {
 
     public int[] getInputs() {
-        return new int[]{};
+        return new int[]{1,2,3,0,2};
     }
 
-    public void implementation(int[] input) {
-        int[] bsp = new int[3];     //0: Buy, 1: Sell, 2: Profit(Sell-Buy)
-        for(int i=0; i<input.length; i++){
-            bsp[0] = input[0];
-            bsp[1] = input[1];
-            bsp[2] = bsp[2] + bsp[1] - bsp[0];
+    public int implementation(int[] input) {
+        System.out.println("Input:"+ Arrays.toString(input));
+        int buyIndex = 0;
+        int sellIndex = 1;
+        int maxProfit = 0;
+        for(int i=0; i<=input.length; i++){
+            int profit = 0;
+
+            if(buyIndex>=input.length || sellIndex>=input.length)
+                break;
+
+            if(input[buyIndex] < input[sellIndex]) {
+                profit = input[sellIndex] - input[buyIndex];
+                buyIndex += 2;
+                sellIndex = buyIndex+1;
+            } else {
+                buyIndex++;
+                sellIndex++;
+            }
+            maxProfit += profit;
         }
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        BuySellStock309 obj = new BuySellStock309();
+        int[] in = obj.getInputs();
+        System.out.println(obj.implementation(in));
     }
 }

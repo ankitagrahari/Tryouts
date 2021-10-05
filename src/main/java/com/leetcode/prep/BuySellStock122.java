@@ -28,33 +28,30 @@ import java.util.Arrays;
 public class BuySellStock122 {
 
     public int[] getInputs() {
-        return new int[]{7,1,5,3,6,4};
+        return new int[]{1,2,3,4,5};
     }
 
+    //Runtime: 2 ms, faster than 18.27% of Java online submissions for Best Time to Buy and Sell Stock II.
+    //Memory Usage: 41.6 MB, less than 8.47% of Java online submissions for Best Time to Buy and Sell Stock II.
     public int implementation(int[] input) {
         System.out.println("Input:"+ Arrays.toString(input));
         int buyIndex = 0;
         int sellIndex = 1;
-
         int maxProfit = 0;
         for(int i=0; i<=input.length; i++){
+            int profit = 0;
+
             if(buyIndex>=input.length || buyIndex==sellIndex || sellIndex>=input.length)
                 break;
 
-            int tempSellIndex = sellIndex;
-            int profit = 0;
-            while(tempSellIndex<input.length && input[buyIndex] < input[tempSellIndex]){
-//                if(tempSellIndex>=input.length)
-//                    break;
-
-                if(profit < (input[tempSellIndex]-input[buyIndex])){
-                    profit = input[tempSellIndex]-input[buyIndex];
-                }
-                tempSellIndex++;
+            if(input[buyIndex] < input[sellIndex]) {
+                profit = input[sellIndex] - input[buyIndex];
+                buyIndex = sellIndex;
+            } else {
+                buyIndex++;
             }
-            maxProfit += profit;
-            buyIndex = sellIndex;
             sellIndex++;
+            maxProfit += profit;
         }
         return maxProfit;
     }
