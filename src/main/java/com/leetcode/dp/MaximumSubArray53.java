@@ -1,4 +1,4 @@
-package com.leetcode.prep.array;
+package com.leetcode.dp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,18 @@ import java.util.List;
  */
 public class MaximumSubArray53 {
 
+    public int maxSubarraySumBF(int[] arr){
+        int maxSum = Integer.MIN_VALUE;
+        for(int i=0; i<arr.length; i++){
+            int temp = 0;
+            for(int j=i; j<arr.length; j++){
+                temp = temp+arr[j];
+                maxSum = maxSum<temp ? temp : maxSum;
+            }
+        }
+        return maxSum;
+    }
+
     //Kadance Algorithm: To find max sum, hold the subarray if the sum is greater than 0.
     public int maxSubarraySum(int[] arr){
         List<Integer> dp = new ArrayList<>();
@@ -35,8 +47,9 @@ public class MaximumSubArray53 {
 
     public static void main(String[] args) {
 //        int[] a = {-2,1,-3,4,-1,2,1,-5,4};
-        int[] a = {-2,0,-1};
+        int[] a = {-3, -1};
         MaximumSubArray53 obj = new MaximumSubArray53();
-        System.out.println(obj.maxSubarraySum(a));
+//        System.out.println(obj.maxSubarraySum(a));
+        System.out.println(obj.maxSubarraySumBF(a));
     }
 }
