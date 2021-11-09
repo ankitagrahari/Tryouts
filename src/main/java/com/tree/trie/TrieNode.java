@@ -17,15 +17,23 @@ public class TrieNode {
         endOfWord = false;
     }
 
-    public TrieNode(char c){
-        //Create a new list with 26 null trienode object added
-        children = new ArrayList<>(Collections.nCopies(CHAR_SIZE, null));
-        endOfWord = false;
-        value = c;
-    }
+//    public TrieNode(char c){
+//        //Create a new list with 26 null trienode object added
+//        children = new ArrayList<>(Collections.nCopies(CHAR_SIZE, null));
+//        endOfWord = false;
+//        value = c;
+//    }
 
     public List<TrieNode> getChildren(){
         return children;
+    }
+
+    public char getValue(){
+        return value;
+    }
+
+    public void setValue(char c){
+        value = c;
     }
 
     public void insert(String key){
@@ -33,7 +41,8 @@ public class TrieNode {
         TrieNode current = this;
         for(Character c: key.toCharArray()){
             if(null==current.children.get(c-'a')){
-                TrieNode childNode = new TrieNode(c);
+                TrieNode childNode = new TrieNode();
+                childNode.setValue(c);
                 current.children.set(c-'a', childNode);
             }
             //Next node
@@ -67,10 +76,9 @@ public class TrieNode {
             }
         }
         found.append(key);
-        while(null!=current){
-            if (current.endOfWord)
+        for(TrieNode node : current.getChildren()){
+            if (null!=node && node.endOfWord)
                 possibleMatches.add(found.toString());
-            current = current;
         }
 
         return possibleMatches;

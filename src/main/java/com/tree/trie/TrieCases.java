@@ -12,7 +12,9 @@ public class TrieCases {
             root.insert(w);
         });
 
+        System.out.println(root.getValue());
 //        root.iterateTrie(root.getChildren());
-        System.out.println(root.search("cann"));
+        root.searchPartial("the").forEach(System.out::println);
+//        System.out.println(root.search("can"));
     }
 }
