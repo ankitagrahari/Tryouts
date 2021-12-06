@@ -15,7 +15,13 @@ public class ArraySort {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
 
+
+        // Uses Fork Join framework to divide the arrays into sub arrays and then sort them. Once sorted using Arrays.sort,
+        // merge the sorted arrays.
+        Arrays.parallelSort(arr);
 //        List<Integer> list = Arrays.asList(1, 4, 2, 8, 3, 5, 1, 0, 6, 3, 1);
 //        list.stream().sorted().forEach(System.out::println);
+
+
     }
 }
