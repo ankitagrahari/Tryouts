@@ -1,10 +1,9 @@
 package com.leetcode.sol;
 
-import io.jsonwebtoken.lang.Collections;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 interface Master{
     int guess(String word);
@@ -26,7 +25,7 @@ class Solution implements Master{
 
     @Override
     public int guess(String word) {
-        if(!Collections.arrayToList(this.wordList).contains(word)){
+        if(!Arrays.asList(this.wordList).contains(word)){
             return -1;
         }
 

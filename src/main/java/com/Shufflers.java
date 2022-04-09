@@ -1,10 +1,5 @@
 package com;
 
-import org.springframework.scripting.bsh.BshScriptUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Shufflers {
 
     public static char diff(String s, String t){
