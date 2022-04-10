@@ -10,50 +10,20 @@ public class MinDistance {
 
     // 1, 2, 1, 2, 3, 5, 1, 4, 5, 7, 8, 5, 9   x=1, y=5
     int minDist(int a[], int n, int x, int y) {
-
-        if(a.length!=n) return -1;
-        boolean xPresent = false;
-        boolean yPresent = false;
-        int prev = -1; int m = Integer.MAX_VALUE;
-
-        for(int i=0; i<n; i++){
-            if(a[i]==x || a[i]==y) {
-                if(prev!=-1 && a[prev]!=a[i])
-                    m = Math.max(i-prev, m);
-            }
-            if(a[i]==y) {
-                yPresent = true;
-            }
-        }
-
-        if(!(xPresent && yPresent))
+        if(a.length!=n)
             return -1;
 
-//
-//        // Implement it as Stack, for each x entry, push x's index to the stack
-//        // If y is encountered, calculate y's index - x's index and put it to a
-//        // list, then pop that x.
-////        List<Integer> stack = new ArrayList<>();
-//        Stack<Integer> stack = new Stack<>();
-//        List<Integer> dis = new ArrayList<>();
-//        for(int i=0; i<n; i++){
-////            try {
-//            if (a[i] == x) {
-//                stack.push(i);
-//                System.out.println("pushed for index:"+i);
-//            }
-//            if (a[i] == y && !stack.empty()) {
-//                int xIndex = stack.pop();
-//                System.out.println("Popping "+ xIndex +" for index:"+i);
-//                dis.add(i - xIndex);
-//            }
-////            } catch (EmptyStackException e){
-////                int size = dis.size();
-////                dis.add(i-size);
-////            }
-//        }
-//        System.out.println(dis);
-//        return dis.stream().min(Comparator.naturalOrder()).get();
+        int min = Integer.MAX_VALUE;
+        int prev = -1;
+        for(int i=0; i<n; i++){
+            if(a[i]==x || a[i]==y){
+                if(prev!=-1 && a[i]!=a[prev]) {
+                    min = Math.min(min, i - prev);
+                }
+                prev = i;
+            }
+        }
+        return min;
     }
 
     public static void main(String[] args) {
