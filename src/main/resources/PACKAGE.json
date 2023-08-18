@@ -1,0 +1,22 @@
+[{"entity_producer_instance_id": "	10.144.11.226_446605",
+"entity_producer_instance_type": "SA",
+"itemtype": "entity",
+"datatablename": "PACKAGE",
+"operation": "UPDATE",
+"timestamp_utc_s": "1654620052",
+"package_id": "0000000000000000000fddd9c946c546",
+"sa_package_id": "2105160006",
+"package_name": "CVE-2010-3133ovalorg.mitre.ovaldef11498win2k12.zip",
+"package_display_name": "CVE-2010-3133ovalorg.mitre.ovaldef11498win2k12.zip",
+"package_type": "SERVER_CONFIGURATION_CHECK",
+"package_file_type": "ZIP",
+"package_file_size": "9312",
+"package_file_name": "CVE-2010-3133ovalorg.mitre.ovaldef11498win2k12.zip",
+"package_version": "10",
+"created_by": "opsware",
+"modified_by": "opsware",
+"created_date": "2021-12-03 06:14:52 UTC",
+"modified_date": "2022-06-07 16:40:51 UTC",
+"entity_unique_id": "0000000000000000000fddd9c946c546"
+}
+]

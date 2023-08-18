@@ -172,8 +172,8 @@ public class AESGCMDMCrypt {
             cipher.init(Cipher.ENCRYPT_MODE, secretKey, gcmParameterSpec, secRandom);
 
             cipher.updateAAD(aadTagData);
-            cipher.update(bytePassword);
-            byte[] encryptedBytes = cipher.doFinal();
+//            cipher.update(bytePassword);
+            byte[] encryptedBytes = cipher.doFinal(bytePassword);
 
 
             byte[] ivCTAndTag = new byte[IV.length + encryptedBytes.length];
@@ -194,6 +194,7 @@ public class AESGCMDMCrypt {
 
     public String decryptAESGCM1(String toDecrypt, SecretKey secretKey){
         try {
+
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
             byte[] decodedToDecrypt = Base64.getDecoder().decode(toDecrypt);
 
@@ -206,9 +207,9 @@ public class AESGCMDMCrypt {
 
             cipher.init(Cipher.DECRYPT_MODE, secretKey, gcmParameterSpec, new SecureRandom());
             cipher.updateAAD(aadTagData);
-            cipher.update(encryptedBytes);
+//            cipher.update(encryptedBytes);
 
-            byte[] decryptedBytes = cipher.doFinal();
+            byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
             return new String(decryptedBytes, UTF_8);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -227,12 +228,13 @@ public class AESGCMDMCrypt {
     }
 
     public static void main(String[] args) {
-        String dataSourceId = "885756";
+        String dataSourceId = "609238";
         String toEncrypt = "OPSWARE_ADMIN";
         AESGCMDMCrypt obj = new AESGCMDMCrypt();
-
+//        String toEncrypt = "BWIFHLvNms8Tm2bNEkno7LFu1yNLB7Yt";
         String encrypted = obj.encryptAESGCM1(toEncrypt.toCharArray(), obj.generateSecretKey(dataSourceId));
         System.out.println(encrypted);
+
         String decrypted = obj.decryptAESGCM1(encrypted, obj.generateSecretKey(dataSourceId));
         System.out.println(decrypted);
 

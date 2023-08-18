@@ -59,15 +59,15 @@ public class ArrayNestingWithOnlyArr{
 //        int[] nums = {5,4,0,3,1,6,2};
 
 
-        try {
-            InputStream inputStream = new FileInputStream("src/main/java/com/leetcode/prep/input");
-            String[] ac = new String(inputStream.readAllBytes()).split(", ");
-            Integer[] nums = Arrays.stream(ac).map(a -> Integer.parseInt(a)).toArray(Integer[]::new);
-            System.out.println(nums.length);
-
-            obj.arrayNesting(Arrays.stream(nums).mapToInt(Integer::intValue).toArray());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            InputStream inputStream = new FileInputStream("src/main/java/com/leetcode/prep/input");
+//            String[] ac = new String(inputStream.readAllBytes()).split(", ");
+//            Integer[] nums = Arrays.stream(ac).map(a -> Integer.parseInt(a)).toArray(Integer[]::new);
+//            System.out.println(nums.length);
+//
+//            obj.arrayNesting(Arrays.stream(nums).mapToInt(Integer::intValue).toArray());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
