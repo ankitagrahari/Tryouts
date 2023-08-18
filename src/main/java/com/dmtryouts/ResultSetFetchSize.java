@@ -10,9 +10,9 @@ public class ResultSetFetchSize {
         String psqlDriver = "org.postgresql.Driver";
         String connectionURL = "jdbc:postgresql://16.166.49.125:5432/truth";
         Properties dbArgs = new Properties();
-        dbArgs.put("user", "opsware_admin");
-        dbArgs.put("password", "opsware_admin");
-        dbArgs.put("database", "16.166.49.125:5432/truth");
+        dbArgs.put("user", "");
+        dbArgs.put("password", "");
+        dbArgs.put("database", "");
         try {
             Class.forName(psqlDriver);
             Connection connection = DriverManager.getConnection(connectionURL, dbArgs);
